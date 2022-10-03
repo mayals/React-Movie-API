@@ -19,16 +19,18 @@ const App = () => {
                 //to display results
                 console.log(Response.data.results)
                 
-                //  Note: Results is meaning Movies that get by axios, so Movies is now has values of:
+                //  Note: results is meaning Movies that get by axios, so Movies is now has values of:
                 setMovies(Response.data.results)
-                // console.log(Movies)    note: movies now is empty because it will be full with values after useEffect
+                // console.log(Movies)    note: movies now is empty because it will be full with values after useEffect()
           }
           
         
 
           useEffect( () => { 
-                           getResponse(); },[] )
-                           console.log(Movies)
+                           getResponse();
+                           console.log(Movies); 
+                          // eslint-disable-next-line react-hooks/exhaustive-deps
+                          },[ ] )
           
           
           
@@ -39,7 +41,7 @@ const App = () => {
                   <NavbarComp/>
                   
                   <Container>
-                      <MoviesList/>
+                      <MoviesList Movies={Movies}/>
                   </Container>
 
               </div>
