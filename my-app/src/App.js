@@ -1,11 +1,22 @@
-import './App.css';
+import { Container } from "react-bootstrap";
+import MoviesList from "./components/MoviesList.js";
+import NavbarComp from "./components/NavbarComp.js"
 
-function App() {
-  return (
-    <div className="App">
-      hello
-    </div>
-  );
+
+const App = () => {
+
+        return (
+
+          <div className="font color-body">
+              
+              <NavbarComp/>
+              
+              <Container>
+                  <MoviesList/>
+              </Container>
+
+          </div>
+        );
 }
 
 export default App;
