@@ -2,11 +2,11 @@ import {Container,Row,Col} from 'react-bootstrap';
 import logo from '../images/logo.png'
 
 
-const NavbarComp = () =>{
+const NavbarComp = ({getSearch}) =>{
     
-    // const onSearch = () =>{
-
-    // }
+    const onSearch = (word) =>{
+        getSearch(word)
+    }
     
     
     return (
@@ -26,7 +26,9 @@ const NavbarComp = () =>{
                            <input 
                                   type="text" 
                                   className="form-control" 
-                                  placeholder="Search .." />
+                                  placeholder="Search .."
+                                  onChange={(e)=>onSearch(e.target.value)}
+                                   />
                         </div>
                     </Col>
 

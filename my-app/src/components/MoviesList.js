@@ -14,7 +14,6 @@ const MoviesList = (props) => {
                         { props.Movies.length?( props.Movies.map((item)=>{ 
                         
                                 return(
-                                      
                                         <CardMovie  
                                                 key={item.id}
                                                 title={item.title} 
@@ -24,8 +23,7 @@ const MoviesList = (props) => {
                                                 poster_path={item.poster_path}
                                         />
                                 ) 
-                        
-                        } )) :<div><p>No Movies</p></div>}
+                        } )) :<h2 className="text-center p-5">No Movies ..</h2>}
        
                 </Row>
         );
