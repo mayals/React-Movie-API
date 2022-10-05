@@ -4,6 +4,8 @@ This project is example of using React to get movies from database by using API 
  https://www.themoviedb.org/documentation/api
 
 
+Also this project is try of paginination using react-paginate
+https://www.npmjs.com/package/react-paginate
 
 #### --------
 

@@ -11,7 +11,7 @@ const App = () => {
           // getResponse  by using axios that get all movies:
         const getAllMovies = async() =>{
             
-                        const Response = await axios.get("https://api.themoviedb.org/3/movie/popular?api_key=1be51e18a1e40908e04cb7ea3bc521f9&language=en-US&page=1")
+                        const Response = await axios.get("https://api.themoviedb.org/3/movie/popular?api_key=1be51e18a1e40908e04cb7ea3bc521f9&language=en-US&page=2")
                         
                         //to display Response 
                         // console.log(Response)
