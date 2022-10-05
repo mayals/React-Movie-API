@@ -2,16 +2,11 @@ import ReactPaginate from 'react-paginate';      //https://www.npmjs.com/package
 
 
 
-const PaginationCompo = ( ) =>{
-    const handlePageClick = () =>{
-
+const PaginationCompo = ({getCurrnetPage,pageCount}) =>{
+    const handlePageClick = (data) =>{
+                        console.log(data.selected+1)
+                        getCurrnetPage(data.selected+1)
     }
-
-   
-     const pageCount = 500 ;
-  
-
-
     return(
         //https://www.npmjs.com/package/react-paginate
         <ReactPaginate

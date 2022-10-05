@@ -2,7 +2,6 @@ import React from "react";
 import { Row } from "react-bootstrap";
 import CardMovie from "./CardMovie";
 import PaginationCompo from "./PaginationCompo.js"
-// import PaginationComponent from './Pagination'
 
 
 
@@ -30,7 +29,10 @@ const MoviesList = (props) => {
                                 ) 
                         } )) :<h2 className="text-center p-5">No Movies ..</h2>}
 
-                        <PaginationCompo/> 
+                        <PaginationCompo  getCurrnetPage={props.getCurrnetPage}
+                                          pageCount={props.pageCount}
+
+                        /> 
        
                 </Row>
 

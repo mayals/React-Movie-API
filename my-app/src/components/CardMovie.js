@@ -1,6 +1,6 @@
 import React from "react";
-import { Col, NavItem } from "react-bootstrap";
-import mov1 from '../images/mov1.jpg'
+import { Col } from "react-bootstrap";
+//import mov1 from '../images/mov1.jpg'
 
 
 
