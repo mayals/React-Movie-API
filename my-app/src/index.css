@@ -87,7 +87,7 @@ body {
 
 .font {
   font-family: "Almarai", sans-serif;
-  font-family: "Cairo", sans-serif;
+  font-family: "Tajawal", sans-serif;
 }
 
 .color {
@@ -113,7 +113,7 @@ body {
 
 .card-text-details {
   color: #555555;
-  font-family: Almarai;
+  font-family: Tajawal;
   font-size: 28px;
   font-weight: bold;
   letter-spacing: 0;
@@ -122,14 +122,14 @@ body {
 
 .card-text-story {
   color: #555555;
-  font-family: Almarai;
+  font-family: Montserrat;
   font-size: 18px;
   letter-spacing: 0;
   line-height: 32px;
 }
 .card-text-title {
   color: #555555;
-  font-family: Almarai;
+  font-family: Cairo;
   font-size: 36px;
   font-weight: bold;
   letter-spacing: 0;

@@ -12,7 +12,6 @@ const MoviesList = (props) => {
                 <Row className="mt-3">
 
                         { props.Movies.length?( props.Movies.map((item)=>{ 
-                        
                                 return(
                                 
                                         <CardMovie  
@@ -23,21 +22,19 @@ const MoviesList = (props) => {
                                                 vote_count={item.vote_count}
                                                 vote_average={item.vote_average}
                                                 poster_path={item.poster_path}
-                                        />     
-                                     
-
-                                        
+                                        />              
                                 ) 
                         } )) :<h2 className="text-center p-5">No Movies ..</h2>}
 
-                        <PaginationCompo  getCurrnetPage={props.getCurrnetPage}
-                                          pageCount={props.pageCount}
 
-                        /> 
+
+                        { props.Movies.length?(<PaginationCompo  
+                                                      getCurrnetPage={props.getCurrnetPage}
+                                                      pageCount={props.pageCount}
+                                             /> ):null}
+                        
        
-                </Row>
-
-                
+                </Row>       
         );
 
 
