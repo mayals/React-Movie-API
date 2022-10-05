@@ -17,6 +17,7 @@ const MoviesList = (props) => {
                                 
                                         <CardMovie  
                                                 key={item.id}
+                                                id={item.id}
                                                 title={item.title} 
                                                 release_date={item.release_date}
                                                 vote_count={item.vote_count}

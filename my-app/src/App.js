@@ -3,6 +3,9 @@ import MoviesList from "./components/MoviesList.js";
 import NavbarComp from "./components/NavbarComp.js"
 import axios from 'axios'
 import { useEffect, useState } from "react";
+import {BrowserRouter , Routes, Route} from "react-router-dom"
+import MovieDetailsComp from "./components/MovieDetailsComp.js";
+
 
 const App = () => {
 
@@ -87,12 +90,15 @@ const App = () => {
                 <Container>
 
 
-
-                        <MoviesList     Movies={Movies}
-                                        getCurrnetPage={getCurrnetPage}
-                                        pageCount={pageCount}
-                        />
-                    
+                    <BrowserRouter>
+                        <Routes>
+                            <Route  path="/" element={<MoviesList     Movies={Movies}
+                                                                    getCurrnetPage={getCurrnetPage}
+                                                                    pageCount={pageCount} />}/>
+                                                
+                            <Route path="/movie/:id" element={<MovieDetailsComp/>}/>
+                        </Routes>
+                    </BrowserRouter>
                 
 
                 </Container>
