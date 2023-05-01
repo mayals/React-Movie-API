@@ -34,17 +34,16 @@ const App = () => {
 
         //  At start bring all Movies
         useEffect( () => { 
-                           getAllMovies();
+                        getAllMovies();
                            console.log(Movies); 
                            // eslint-disable-next-line react-hooks/exhaustive-deps
-                          },[ ] 
+                        },[ ] 
         )
           
         
         // getResponse  by using axios that get CurrnetPage that selected by the current user:
-        const getCurrnetPage = async(page) =>{
-            
-            const Response = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=1be51e18a1e40908e04cb7ea3bc521f9&language=en-US&page=${page}`)
+        const getCurrnetPage = async(page) =>{  
+                        const Response = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=1be51e18a1e40908e04cb7ea3bc521f9&language=en-US&page=${page}`)
             
             //to display Response 
             // console.log(Response)
@@ -88,19 +87,15 @@ const App = () => {
                 <NavbarComp      getSearch={getSearch}/>
                   
                 <Container>
-
-
                     <BrowserRouter>
                         <Routes>
-                            <Route  path="/" element={<MoviesList     Movies={Movies}
+                            <Route  path="/" element={<MoviesList           Movies={Movies}
                                                                     getCurrnetPage={getCurrnetPage}
-                                                                    pageCount={pageCount} />}/>
+                                                                         pageCount={pageCount} />}/>
                                                 
                             <Route path="/movie/:id" element={<MovieDetailsComp/>}/>
                         </Routes>
                     </BrowserRouter>
-                
-
                 </Container>
             </div>
           );

@@ -2,12 +2,11 @@ import {Container,Row,Col} from 'react-bootstrap';
 import logo from '../images/logo.png'
 
 
-const NavbarComp = ({getSearch}) =>{
-    
+const NavbarComp = (props) =>{
     const onSearch = (word) =>{
-        getSearch(word)
+       props.getSearch(word)
     }
-    
+            
     
     return (
         <div className="nav-style w-100">
