@@ -8,19 +8,20 @@ import axios from 'axios'
 const MovieDetailsComp = () => {
     const Allparams = useParams();
     console.log(Allparams)
-    const [movie, setMovie] = useState([])
+    
+    const [movieStat, setmovieState] = useState([])
 
     //get  movie by details 
     const getMovieDetails = async () => {
         const Response = await axios.get(`https://api.themoviedb.org/3/movie/${Allparams.id}?api_key=1be51e18a1e40908e04cb7ea3bc521f9&language=en-US`)
-        setMovie(Response.data)
+        setmovieState(Response.data)
     }
 
 
 
     useEffect(() => {
         getMovieDetails();
-    }, [])
+    },[])
 
 
 
@@ -32,21 +33,21 @@ const MovieDetailsComp = () => {
                     <div className="card-detalis  d-flex align-items-center ">
                         <img
                             className="img-movie w-30"
-                            src={`https://image.tmdb.org/t/p/w500/` + movie.poster_path}
-                            alt={movie.title}
+                            src={`https://image.tmdb.org/t/p/w500/` + movieStat.poster_path}
+                            alt={movieStat.title}
                         />
                         <div className="justify-content-center text-center  mx-auto">
                             <p className="card-text-details border-bottom">
-                                Movie Title : {movie.title}
+                                Movie Title : {movieStat.title}
                             </p>
                             <p className="card-text-details border-bottom">
-                                Movie Date:{movie.release_date}
+                                Movie Date:{movieStat.release_date}
                             </p>
                             <p className="card-text-details border-bottom">
-                                Movie Reviews Counter : {movie.vote_count}
+                                Movie Reviews Counter : {movieStat.vote_count}
                             </p>
                             <p className="card-text-details border-bottom">
-                                Movie Average :{movie.vote_average}
+                                Movie Average :{movieStat.vote_average}
                             </p>
                         </div>
                     </div>
@@ -61,7 +62,7 @@ const MovieDetailsComp = () => {
                             <p className="card-text-title border-bottom">The Movie Story:</p>
                         </div>
                         <div className="text-end px-2">
-                            <p className="card-text-story">{movie.overview}</p>
+                            <p className="card-text-story">{movieStat.overview}</p>
                         </div>
                     </div>
                 </Col>
@@ -83,7 +84,7 @@ const MovieDetailsComp = () => {
                             </button>
                         </Link>
 
-                        <a href={movie.homepage} >
+                        <a href={movieStat.homepage} >
                             <button
                                 style={{ backgroundColor: "#d9251c", border: "none" }}
                                 className="btn btn-primary">

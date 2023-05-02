@@ -2,10 +2,11 @@ import ReactPaginate from 'react-paginate';      //https://www.npmjs.com/package
 
 
 
-const PaginationCompo = ({getCurrnetPage,pageCount}) =>{
+const PaginationComp = (props) =>{
+     //https://www.npmjs.com/package/react-paginate
     const handlePageClick = (data) =>{
                         console.log(data.selected+1)
-                        getCurrnetPage(data.selected+1)
+                        props.MoviesForSelectedpage(data.selected+1)  // data.selected+1   is get when click on button of page number
     }
     return(
         //https://www.npmjs.com/package/react-paginate
@@ -17,13 +18,18 @@ const PaginationCompo = ({getCurrnetPage,pageCount}) =>{
             onPageChange={handlePageClick}        /* The method to call when a page is changed. 
                                                      Exposes the current page object as an argument.*/
 
-            pageRangeDisplayed={2}                // The range of pages displayed.
+            marginPagesDisplayed={2}               // The number of pages to display for margins.
 
-            pageCount={pageCount}                 // Required. The total number of pages.
+            pageRangeDisplayed={2}                // The range of pages displayed. 
+
+            pageCount={props.pageCountState}                 // Required. The total number of pages.
 
             previousLabel="Previous"              // Label for the previous button.
 
-                                                          
+
+
+
+            //i get these class from bootstap to design nice styles                                         
             //https://getbootstrap.com/docs/5.2/components/pagination/#overview
             containerClassName={"pagination pagination-sm justify-content-center p-3"}
             
@@ -45,4 +51,4 @@ const PaginationCompo = ({getCurrnetPage,pageCount}) =>{
     );
 }
 
-export default PaginationCompo;
+export default PaginationComp;

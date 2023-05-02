@@ -3,11 +3,10 @@ import logo from '../images/logo.png'
 
 
 const NavbarComp = (props) =>{
+
     const onSearch = (word) =>{
-       props.getSearch(word)
-    }
-            
-    
+       props.getMoviesSearchedByword(word)
+    } 
     return (
         <div className="nav-style w-100">
             <Container>

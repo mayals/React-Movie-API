@@ -1,20 +1,19 @@
 import React from "react";
 import { Row } from "react-bootstrap";
-import CardMovie from "./CardMovie";
-import PaginationCompo from "./PaginationCompo.js"
+import CardMovieComp from "./CardMovieComp";
+import PaginationComp from "./PaginationComp.js"
 
 
 
-const MoviesList = (props) => {
+const MoviesListComp = (props) => {
   
         return (
-
                 <Row className="mt-3">
-
-                        { props.Movies.length?( props.Movies.map((item)=>{ 
+                        {/* to display cards  */}
+                        { props.moviesState.length?( props.moviesState.map((item)=>{ 
                                 return(
                                 
-                                        <CardMovie  
+                                        <CardMovieComp  
                                                 key={item.id}
                                                 id={item.id}
                                                 title={item.title} 
@@ -27,17 +26,15 @@ const MoviesList = (props) => {
                         } )) :<h2 className="text-center p-5">No Movies ..</h2>}
 
 
-
-                        { props.Movies.length?(<PaginationCompo  
-                                                      getCurrnetPage={props.getCurrnetPage}
-                                                      pageCount={props.pageCount}
-                                             /> ):null}
+                        {/* to display pagination  */}
+                        { props.moviesState.length?(<PaginationComp  
+                                                                     MoviesForSelectedpage={props.getMoviesForSelectedpage}
+                                                                            pageCountState={props.pageCountState}
+                                                   />):null}
                         
        
                 </Row>       
         );
-
-
 };
 
-export default MoviesList;             
+export default MoviesListComp;             
